@@ -1,0 +1,269 @@
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    font-family: Arial, "Segoe UI", sans-serif;
+    background: #1e1e2e;
+    color: #e4e4e7;
+}
+
+#app {
+    width: 100%;
+    height: 100%;
+    padding: 16px;
+}
+
+/* Заголовок */
+
+h1 {
+    margin: 0 0 16px;
+    font-size: 22px;
+    color: #f4f4f5;
+}
+
+h2 {
+    margin: 0 0 10px;
+    font-size: 14px;
+    color: #a1a1aa;
+}
+
+/* Основная сетка */
+
+.layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    height: calc(100vh - 70px);
+}
+
+/* Панели */
+
+.panel {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    background: #2a2a3c;
+    border: 1px solid #3f3f52;
+    border-radius: 8px;
+    padding: 12px;
+    overflow: hidden;
+}
+
+/* Поле исходного кода */
+
+textarea {
+    flex: 1;
+    width: 100%;
+    resize: none;
+
+    background: #181825;
+    color: #e4e4e7;
+
+    border: 1px solid #3f3f52;
+    border-radius: 6px;
+
+    padding: 12px;
+
+    outline: none;
+
+    font-family: "Consolas", "Courier New", monospace;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+textarea:focus {
+    border-color: #6366f1;
+}
+
+/* Кнопки */
+
+.buttons {
+    display: flex;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+button {
+    height: 34px;
+    padding: 0 16px;
+
+    border: none;
+    border-radius: 5px;
+
+    background: #6366f1;
+    color: white;
+
+    cursor: pointer;
+    font-size: 13px;
+}
+
+button:hover {
+    background: #4f46e5;
+}
+
+button:active {
+    transform: translateY(1px);
+}
+
+/* Результаты */
+
+.result {
+    flex: 1;
+    overflow-y: auto;
+    padding-right: 4px;
+}
+
+/* Карточки метрик Gilb */
+
+.gilb-metrics {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.gilb-card {
+    background: #181825;
+    border: 1px solid #3f3f52;
+    border-radius: 6px;
+    padding: 10px;
+}
+
+.gilb-card span {
+    display: block;
+    color: #a1a1aa;
+    font-size: 12px;
+    margin-bottom: 6px;
+}
+
+.gilb-card b {
+    display: block;
+    color: #a5b4fc;
+    font-size: 22px;
+}
+
+/* Формулы */
+
+.formula {
+    background: #181825;
+    border: 1px solid #3f3f52;
+    border-radius: 6px;
+
+    padding: 10px;
+    margin-bottom: 14px;
+
+    font-family: "Consolas", "Courier New", monospace;
+    font-size: 12px;
+    line-height: 1.7;
+
+    color: #d4d4d8;
+}
+
+/* Таблицы */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+
+    font-size: 13px;
+    margin-bottom: 12px;
+}
+
+th,
+td {
+    text-align: left;
+
+    padding: 6px 8px;
+
+    border-bottom: 1px solid #3f3f52;
+}
+
+th {
+    color: #a1a1aa;
+    font-weight: 600;
+}
+
+td.num {
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+}
+
+/* Метрики Халстеда */
+
+.metrics {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px 16px;
+
+    font-size: 13px;
+}
+
+.metrics div {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.metrics b {
+    color: #a5b4fc;
+}
+
+.halstead-formula {
+    font-size: 12px;
+    color: #71717a;
+
+    margin-top: 12px;
+    line-height: 1.6;
+}
+
+/* Ошибки */
+
+.error {
+    color: #f87171;
+}
+
+/* Полоса прокрутки */
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #181825;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #3f3f52;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #52525f;
+}
+
+/* Для небольших окон */
+
+@media (max-width: 800px) {
+    .layout {
+        grid-template-columns: 1fr;
+        height: auto;
+    }
+
+    .panel {
+        min-height: 400px;
+    }
+
+    .gilb-metrics {
+        grid-template-columns: 1fr;
+    }
+}
+

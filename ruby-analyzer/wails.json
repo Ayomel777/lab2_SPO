@@ -1,0 +1,11 @@
+{
+  "$schema": "https://wails.io/schemas/config.v2.json",
+  "name": "ruby-analyzer",
+  "outputfilename": "ruby-analyzer",
+  "frontend": {
+    "dir": "frontend"
+  },
+  "author": {
+    "name": "Platon"
+  }
+}
